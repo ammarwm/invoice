@@ -1,0 +1,254 @@
+* {
+font-family: Arial, Verdana, sans-serif;
+color: #665544;
+text-align: center;
+}
+
+.nav, .invoice-control, .invoice-content, #footer {
+background-color: #efefef;
+margin-top: 20px;
+padding: 10px 0px 5px 0px;}
+
+.nav{
+height: 50px
+}
+
+#nav-content{
+float: right;
+height:50px;
+width:400px;
+margin: 0px 0px 10px 10px;
+padding: 0px;
+}
+
+.invoice-content {
+width: 100%;
+height: 100%;
+border: 1px solid #ccc;}
+
+.invoice-control {
+height: 100px;}
+
+li {
+display: inline;
+padding: 5px;}
+
+.invoice{
+ background-repeat: no-repeat;
+ background-position: 0px 0px;
+ border: 1px solid #ccc;
+ }
+ 
+
+ #invoice-header {
+font-size: 1.5em;
+text-align: center;
+background-color: #FFFF00;
+margin: 0 0 25px;
+padding: 10px 10px 10px 35px;
+}
+
+.text{
+text-align: right;
+}
+
+.from-holder{
+border: 1px solid #ccc;
+background-color:#FF9326;
+}
+.from-title{
+margin: 0 0 1px 260px;
+font-size: .9em;
+}
+
+.to-holder{
+border: 1px solid #ccc; 
+}
+
+.to-title{
+margin: 0 0 1px 248px;
+}
+.to-info{
+order: 2;
+}
+
+.from{
+border: 1px solid #ccc; 
+}
+
+.input-group-addon {
+min-width:280px;
+height:25px
+}
+ 
+.input-label {
+font-weight: 700;
+padding-top: 0;
+padding-bottom: 0;
+color: #777;
+background: #eee;
+height: 40px;
+text-align: center;
+font-size:large;
+dir:"rtl";
+}
+
+#item-totals {
+width: 100%;
+margin: 10px auto;
+}
+
+#logo {
+width: 50%;
+height: 150px;
+position: relative;
+float: right;
+margin: 0 0 25px;
+}
+
+th{
+text-align: right;
+}
+
+
+table {
+display: table;
+border-collapse: collapse;
+border-spacing: 0px;
+}
+
+table, th, td{
+border: 1px solid blue;	
+height: 30px;
+text-align: right;
+}
+
+tr {
+display: table-row;
+vertical-align: inherit;
+border-color: inherit;
+}
+
+.invoice #item-totals tbody tr td.delete {
+width: 30px;
+text-align: center;
+line-height: 38px;
+white-space: nowrap;
+}
+
+td.delete .delete-row {
+color: #999;
+border: none;
+box-shadow: none;
+background: 0 0;
+}
+
+.color_red{
+color:#FF2626;
+}
+
+.ralign{
+float: right;
+}
+
+.keyword{
+font-weight: 700;
+padding-top: 10;
+padding-bottom: 10;
+color: #777;
+background: #eee;
+height: 40px;
+text-align: center;
+font-size:large;  
+}
+
+.number{
+ font-weight: 700;
+ padding-top: 10;
+ padding-bottom: 10;
+ color: #000;
+ background: #ffffff;
+ height: 40px;
+ text-align: center;
+ font-size:large;
+}
+
+.back{
+background: #FEE;
+}
+
+.ttable{
+width:100%;   
+}
+
+.top-buffer { 
+margin-top:90px;
+margin-bottom:90px; 
+}
+
+#a4{
+ height:200mm;
+ width:210mm;
+}
+
+
+
+@media print {
+ .col-xs-1, .col-xs-2, .col-xs-3, .col-xs-4, .col-xs-5, .col-xs-6, .col-xs-7, .col-xs-8, .col-xs-9, .col-xs-10, .col-xs-11, .col-xs-12 {
+  float: left;
+ }
+ .col-xs-12 {
+  width: 100%;
+ }
+ .col-xs-11 {
+  width: 91.66666666666666%;
+ }
+ .col-xs-10 {
+  width: 83.33333333333334%;
+ }
+ .col-xs-9 {
+  width: 75%;
+ }
+ .col-xs-8 {
+  width: 66.66666666666666%;
+ }
+ .col-xs-7 {
+  width: 58.333333333333336%;
+ }
+ .col-xs-6 {
+  width: 50%;
+ }
+ .col-xs-5 {
+  width: 41.66666666666667%;
+ }
+ .col-xs-4 {
+  width: 33.33333333333333%;
+ }
+ .col-xs-3 {
+  width: 25%;
+ }
+ .col-xs-2 {
+  width: 16.666666666666664%;
+ }
+ .col-xs-1 {
+  width: 8.333333333333332%;
+ }
+}
+
+#supplier{
+ width: 100%;
+ padding: 2px;
+ border: 0px solid navy;
+ margin: 2px;
+ text-align: center;
+ font-weight: 700;
+ height: 30px;
+ font-size:200%;
+}
+
+.no-border table, .no-border th, .no-border td{
+ border: 0px solid green;
+ height: 30px;
+ text-align: right;
+ padding:2px;
+}
