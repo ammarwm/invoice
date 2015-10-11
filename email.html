@@ -1,122 +1,129 @@
-<div id="invoice" class="container" ng-controller="itemList as lctrl">
-                <form><input type="button" ng-click="lctrl.printDiv()">Test</input></form>
-				<div class="row">
-					<div id="supplier" class="col-xs-12 ">
-						{{header.from}}
-						<br>
-						{{header.from_add}}
-					</div>
-				</div>
-				<div class="row">
-			        <div class="col-xs-12">
-						<div class="col-xs-6">
-							<table class="no-border" width="100%">
-								<tr>
-									<td class="keyword">
-									:	المشتري
-									</td>
-								</tr>
-								<tr>
-									<td class="keyword">{{header.to}}</td>
+<div ng-controller="itemList as lctrl">
+    <div id="invoice" class="container">
+        <div class="row">
+            <div id="supplier" class="col-xs-12 ">
+                {{header.from}}
+                <br>
+                {{header.from_add}}
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-xs-12">
+                <div class="col-xs-6">
+                    <table class="no-border" width="100%">
+                        <tr>
+                            <td class="keyword">
+                                : المشتري
+                            </td>
+                        </tr>
+                        <tr>
+                            <td class="keyword">{{header.to}}</td>
 
-								</tr>
-								<tr>
-									<td class="keyword">{{header.to_add}}</td>
-								</tr>
-							</table>
-						</div>
-						<div class="col-xs-6 back">
-									<table class="no-border" width="100%">
-										 <tr>
-										 	   <td class="keyword">
-										 		   {{header.number}}
-										 	   </td>
-										 	   <td class = "keyword">
-										        	     رقم القائمه
-										 	   </td>
-										 </tr>
-										 <tr>
-											 	<td width="50%" class="keyword">
-													{{header.date}}
-											 	</td>
-											 	<td width="50%" class="keyword">
-											 		التاريخ
-											 	</td>
-										 </tr>	
-										 <tr>
-											 	<td width="50%" class="keyword">
-											 		{{header.pdate}}
-											 	</td>
-											 	<td width="50%" class="keyword">
-											 		تاريخ الدفع
-											 	</td>
-										 </tr>
-									</table>
-						</div>
-				    </div>
-			    </div>
+                        </tr>
+                        <tr>
+                            <td class="keyword">{{header.to_add}}</td>
+                        </tr>
+                    </table>
+                </div>
+                <div class="col-xs-6">
+                    <table class="no-border" width="100%">
+                        <tr>
+                            <td class="keyword">
+                                {{header.number}}
+                            </td>
+                            <td class="keyword">
+                                رقم القائمه
+                            </td>
+                        </tr>
+                        <tr>
+                            <td width="50%" class="keyword">
+                                {{header.date}}
+                            </td>
+                            <td width="50%" class="keyword">
+                                التاريخ
+                            </td>
+                        </tr>
+                        <tr>
+                            <td width="50%" class="keyword">
+                                {{header.pdate}}
+                            </td>
+                            <td width="50%" class="keyword">
+                                تاريخ الدفع
+                            </td>
+                        </tr>
+                    </table>
+                </div>
+            </div>
+        </div>
 
-			    <div class="row top-buffer">
-		             <div>
-							<table id = "lineitem" class="table table-bordered" >
-								<thead>
-									<tr>
-										<th class ="input-label">المبلغ</th>
-										<th class ="input-label">سعر المفرد</th>
-										<th class ="input-label">الكميه</th>
-										<th class ="input-label">المواصفات</th>
-										<th class ="input-label">الكود</th>
-									</tr>
-								</thead>
-								<tr ng-repeat="item in items">
-									<td class="col-xs-2 number">
-										{{item.amount}}
-									</td>
-									<td class="col-xs-2 number">
-										{{item.price}}
-									</td>
-									<td class="col-xs-2 number">
-										{{item.qty}}
-									</td>
-									<td class="col-xs-4 number">
-										{{item.desc}}
-									</td>
-									<td class="col-xs-2 number">
-										{{item.code}}
-									</td>
-								</tr>
-							</table>
-                     </div>
-		       </div>
-	           <div class="row top-buffer">
-				     <div class="col-xs-6">
-						 <table class="no-border" width="100%">
-							 <tr>
-								 <td width="50%" class="keyword">
-									 {{header.total}}
-								 </td>
-								 <td class = "keyword">
-									 المبلغ الكلي
-								 </td>
-							 </tr>
-							 <tr>
-								 <td width="50%" class="keyword">
-									 {{header.paid}}
-								 </td>
-								 <td width="50%" class="keyword">
-									  المبلغ المدفوع
-								 </td>
-							 </tr>
-							 <tr>
-								 <td width="50%" class="keyword">
-									 {{header.balance}}
-								 </td>
-								 <td width="50%" class="keyword">
-									 المبلغ الباقي
-								 </td>
-							 </tr>
-						 </table>
-					 </div>
-			   </div>
-
+        <div class="row top-buffer">
+            <div>
+                <table id="lineitem" class="table table-bordered">
+                    <thead>
+                    <tr>
+                        <th class="input-label">المبلغ</th>
+                        <th class="input-label">سعر المفرد</th>
+                        <th class="input-label">الكميه</th>
+                        <th class="input-label">المواصفات</th>
+                        <th class="input-label">الكود</th>
+                    </tr>
+                    </thead>
+                    <tr ng-repeat="item in items">
+                        <td class="col-xs-2 number">
+                            {{item.amount}}
+                        </td>
+                        <td class="col-xs-2 number">
+                            {{item.price}}
+                        </td>
+                        <td class="col-xs-2 number">
+                            {{item.qty}}
+                        </td>
+                        <td class="col-xs-4 number">
+                            {{item.desc}}
+                        </td>
+                        <td class="col-xs-2 number">
+                            {{item.code}}
+                        </td>
+                    </tr>
+                </table>
+            </div>
+        </div>
+        <div class="row top-buffer">
+            <div class="col-xs-6">
+                <table class="no-border" width="100%">
+                    <tr>
+                        <td width="50%" class="keyword">
+                            {{header.total}}
+                        </td>
+                        <td class="keyword">
+المجملوع                        </td>
+                    </tr>
+                    <tr>
+                        <td width="50%" class="keyword">
+                            {{header.freight}}
+                        </td>
+                        <td class="keyword">
+                            المبلغ الكلي
+                        </td>
+                    </tr>
+                    <tr>
+                        <td width="50%" class="keyword">
+                            {{header.paid}}
+                        </td>
+                        <td width="50%" class="keyword">
+                                                        المبلغ المدفوع
+                        </td>
+                    </tr>
+                    <tr>
+                        <td width="50%" class="keyword">
+                            {{header.balance}}
+                        </td>
+                        <td width="50%" class="keyword">
+                            المبلغ الباقي
+                        </td>
+                    </tr>
+                </table>
+            </div>
+        </div>
+    </div>
 </div>

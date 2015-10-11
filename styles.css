@@ -31,14 +31,14 @@ height: 100px;}
 
 li {
 display: inline;
-padding: 5px;}
+padding: 5px;
+}
 
 .invoice{
  background-repeat: no-repeat;
  background-position: 0px 0px;
  border: 1px solid #ccc;
  }
- 
 
  #invoice-header {
 font-size: 1.5em;
@@ -110,7 +110,6 @@ th{
 text-align: right;
 }
 
-
 table {
 display: table;
 border-collapse: collapse;
@@ -118,7 +117,7 @@ border-spacing: 0px;
 }
 
 table, th, td{
-border: 1px solid blue;	
+border: 0px solid blue;
 height: 30px;
 text-align: right;
 }
@@ -173,10 +172,6 @@ font-size:large;
  font-size:large;
 }
 
-.back{
-background: #FEE;
-}
-
 .ttable{
 width:100%;   
 }
@@ -184,6 +179,13 @@ width:100%;
 .top-buffer { 
 margin-top:90px;
 margin-bottom:90px; 
+}
+
+.thumbnail {
+ line-height: 20px;
+ margin-bottom: 5px;
+ overflow: hidden;
+ word-break: normal;
 }
 
 #a4{
@@ -194,56 +196,64 @@ margin-bottom:90px;
 
 
 @media print {
- .col-xs-1, .col-xs-2, .col-xs-3, .col-xs-4, .col-xs-5, .col-xs-6, .col-xs-7, .col-xs-8, .col-xs-9, .col-xs-10, .col-xs-11, .col-xs-12 {
+ .col-md-1, .col-md-2, .col-md-3, .col-md-4, .col-md-5, .col-md-6, .col-md-7, .col-md-8, .col-md-9, .col-md-10, .col-md-11, .col-md-12 {
   float: left;
  }
- .col-xs-12 {
+ .col-md-12 {
   width: 100%;
  }
- .col-xs-11 {
+ .col-md-11 {
   width: 91.66666666666666%;
  }
- .col-xs-10 {
+ .col-md-10 {
   width: 83.33333333333334%;
  }
- .col-xs-9 {
+ .col-md-9 {
   width: 75%;
  }
- .col-xs-8 {
+ .col-md-8 {
   width: 66.66666666666666%;
  }
- .col-xs-7 {
+ .col-md-7 {
   width: 58.333333333333336%;
  }
- .col-xs-6 {
+ .col-md-6 {
   width: 50%;
  }
- .col-xs-5 {
+ .col-md-5 {
   width: 41.66666666666667%;
  }
- .col-xs-4 {
+ .col-md-4 {
   width: 33.33333333333333%;
  }
- .col-xs-3 {
+ .col-md-3 {
   width: 25%;
  }
- .col-xs-2 {
+ .col-md-2 {
   width: 16.666666666666664%;
  }
- .col-xs-1 {
+ .col-md-1 {
   width: 8.333333333333332%;
+ }
+ .hidden-elem{
+  display: none;
+ }
+
+ .no-border{
+  border: 0px solid navy;
  }
 }
 
 #supplier{
  width: 100%;
- padding: 2px;
+ padding-top: 10;
+ padding-bottom: 10;
  border: 0px solid navy;
- margin: 2px;
+ margin: 20px;
  text-align: center;
- font-weight: 700;
- height: 30px;
- font-size:200%;
+ font-weight: 600;
+ height: 80px;
+ font-size:x-large;
 }
 
 .no-border table, .no-border th, .no-border td{

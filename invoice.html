@@ -1,10 +1,46 @@
-<div class="invoice container" ng-controller="itemCtrl as ictrl">
-   <div class="col-md-10">
+<!--<div class="header">
+	<div class="nav">
+		<div id="nav-content">
+			<ul>
+				<li><a href="">Home</a></li>
+			</ul>
+		</div>
+	</div>
+</div>-->
+
+<div id="invoice" class="invoice container" ng-controller="invoiceCtrl as ictrl">
+	<div class="row">
+		<div class="col-md-12 hidden-elem">
+			<div class="form-group">
+				<button type="button" class="btn btn-info btn-block" ng-click="ictrl.emailInvoice()">
+					طبع
+				</button>
+			</div>
+		</div>
+	</div>
+	<div class="row">
+		<div class="col-md-4"></div>
+		<div class="col-md-4">
+		  <div flow-init="{singFile:true}">
+			<div class=" ng-hide hidden-elem" ng-show="!$flow.files.length" flow-btn>
+				<img src="photos\no_image.png">
+				<input type="file" style="visibility: hidden ;position: absolute;">
+			</div>
+			<div ng-show="$flow.files.length">
+				<img flow-img="$flow.files[$flow.files.length-1]" width="204" height="136" flow-btn>
+				<input type="file" style="visibility: hidden ;position: absolute;">
+			</div>
+		  </div>
+		</div>
+		<div class="col-md-4"></div>
+	</div>
+	<br>
+   <div class="col-md-12">
    <div class="row">
       <div class="col-md-6">
 		   <div class="form-group">
 		        <div class="from-title pull-right">
-		             <input type="text" class="text form-control" ng-model="header.from">
+		             <input type=text class="text form-control" ng-model="header.from" placeholder="البائع">
 				</div>
 			</div>
 			<div class="form-group">
@@ -12,7 +48,7 @@
 			</div>
 			<div class="form-group">
 		        <div class="to-title pull-right">
-		             <input type="text" class="text form-control" ng-model="header.to">
+		             <input type=text class="text form-control" ng-model="header.to" placeholder="المشتري">
 				</div>
 			</div>
 			<div class="form-group">
@@ -20,22 +56,22 @@
 			</div>
 	   </div>
 	   <div class="col-md-6">
-	      <div class="input-group addon-input">
-	        <input type="text" class="form-control input-lg" ng-model="header.number"> 
+	      <div class="input-group">
+	        <input type=text class="form-control input-lg" ng-model="header.number" placeholder="{{header.number}}">
 		    <div class="input-group-addon">
-		         <input type="text" class="input-label form-control" placeholder ="رقم القائمه">
+		         <input type=text class="input-label form-control" placeholder ="رقم القائمه">
 		    </div>
 		  </div>
-		  <div class="input-group addon-input">
-	        <input type="text" class="form-control input-lg" ng-model="header.date">
+		  <div class="input-group">
+	        <input type=text class="form-control input-lg" ng-model="header.date" placeholder="{{header.date}}">
 		    <div class="input-group-addon">
-		         <input type="text" class="input-label form-control" placeholder ="التاريخ">
+		         <input type=text class="input-label form-control" placeholder ="التاريخ">
 		    </div>
 		  </div>
-		  <div class="input-group addon-input">
-	        <input type="text" class="form-control input-lg" ng-model="header.pdate">
+		  <div class="input-group">
+	        <input type=text class="form-control input-lg" ng-model="header.pdate" placeholder="{{header.pdate}}">
 		    <div class="input-group-addon">
-		         <input type="text" class="input-label form-control" placeholder ="تاريخ الدفع">
+		         <input type=text class="input-label form-control" placeholder ="تاريخ الدفع">
 		    </div>
 		  </div>
 	   </div>   
@@ -46,7 +82,7 @@
 			<table id = "lineitem" class="table table-bordered" >
 				<thead>
 					<tr>
-					    <th></th>
+					    <th class="hidden-elem"></th>
 						<th class ="input-label">المبلغ</th>
 						<th class ="input-label">سعر المفرد</th>
 						<th class ="input-label">الكميه</th>
@@ -55,26 +91,26 @@
 					</tr>
 				</thead>
 				<tr ng-repeat="item in items">
-				    <td>
-						<button class="delete-row" ng-model="item" ng-click="ictrl.delItem($index)"></button>
+				    <td class="hidden-elem">
+						<button class="delete-row " ng-model="item" ng-click="ictrl.delItem($index)"></button>
 					</td>
 					<td class="col-md-2">
-						<input type="text" class="form-control" ng-model="item.amount" placeholder="{{item.amount=item.qty*item.price}}">		
+						<input type=text class="form-control" ng-model="item.amount" placeholder="{{item.amount=item.qty*item.price}}">
 					</td>
 					<td class="col-md-2">
-						<input type="text" class="form-control" ng-model="item.price">
+						<input type=text class="form-control" ng-model="item.price" placeholder="{{item.price}}">
 					</td>
 					<td class="col-md-2">
-						<input type="text" class="form-control" ng-model="item.qty">
+						<input type=text class="form-control" ng-model="item.qty" placeholder="{{item.qty}}">
 					</td>
 					<td class="col-md-4">
-						<input type="text" class="form-control" ng-model="item.desc">
+						<input type=text class="form-control" ng-model="item.desc" placeholder="{{item.desc}}">
 					</td>
 					<td class="col-md-2">
-						<input type="text" class="form-control" ng-model="item.code">
+						<input type=text class="form-control" ng-model="item.code" placeholder="{{item.code}}">
 					</td>
 				</tr>
-				<tr>
+				<tr class="hidden-elem">
 					<td colspan=6>
 						<button class="btn" ng-click="ictrl.addItem()">سطر +</button>
 					</td>
@@ -83,50 +119,40 @@
 		</div>
    </div>
    </div>
-   <div class="col-md-2">
-    <div class="row">
-		<form>
-			<div class="form-group">
-				<input type="email" class="form-control" id="inputEmail" placeholder="Email">
-				<button type="submit" class="btn btn-info btn-block" ng-click="ictrl.emailInvoice()">ايميل</button><br>
-			</div>
-		</form>
-	     <div class="form-group">
-		      <button type="button" class="btn btn-info btn-block" ng-click="">طبع</button>
-		 </div>
-         <div class="form-group">
-		      <button type="button" class="btn btn-info btn-block" ng-click="">حفظ</button>
-		 </div>
-	</div>
-   </div>
    <div class="row">
-		<div class="col-md-5">
+		<div class="col-md-6">
 		<div class="input-group addon-input">
-	        <input type="text" class="form-control input-lg" ng-model="total" placeholder ="{{total}}"> 
+	        <input type=text class="form-control input-lg" ng-model="header.total" placeholder ="{{ictrl.getTotal()}}">
 		    <div class="input-group-addon">
-		         <input type="text" class="input-label form-control" placeholder ="المبلغ الكلي">
+		         <input type=text class="input-label form-control" placeholder ="المجموع">
+		    </div>
+		  </div>
+			<div class="input-group addon-input">
+				<input type="number" class="form-control input-lg" ng-model="header.freight" placeholder ="{{header.freight}}">
+				<div class="input-group-addon">
+					<input type=number class="input-label form-control" placeholder ="النقل">
+				</div>
+			</div>
+		  <div class="input-group addon-input">
+	        <input type="number" class="form-control input-lg" ng-model="header.paid" placeholder ="{{header.paid}}">
+		    <div class="input-group-addon">
+		         <input type=text class="input-label form-control" placeholder ="الواصل">
 		    </div>
 		  </div>
 		  <div class="input-group addon-input">
-	        <input type="text" class="form-control input-lg" ng-model="paid">
+	        <input type=number class="form-control input-lg" ng-model="header.balance" placeholder =
+					"{{header.balance=(header.total+header.freight)-header.paid}}">
 		    <div class="input-group-addon">
-		         <input type="text" class="input-label form-control" placeholder ="الواصل">
-		    </div>
-		  </div>
-		  <div class="input-group addon-input">
-	        <input type="text" class="form-control input-lg" ng-model="balance" placeholder ="{{balance=total-paid}}">
-		    <div class="input-group-addon">
-		         <input type="text" class="input-label form-control"  placeholder ="الباقي">
+		         <input type=text class="input-label form-control"  placeholder ="الباقي">
 		    </div>
 		  </div>
 		</div>
-	   <div class="row">
+	   <!--<div class="row">
 		   <div class="col-md-10">
 			   <div class="invoice-header form-group">
-				   <input type="text" class="text form-control" value=" ملاحظات ">
+				   <input type=text class="text form-control" value=" ملاحظات ">
 			   </div>
 		   </div>
-	   </div>
+	   </div>-->
    </div>
-
 </div>
